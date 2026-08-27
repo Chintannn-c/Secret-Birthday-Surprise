@@ -34,11 +34,11 @@ const QUOTES = [
   },
   {
     id: 4,
-    quote: "Happiest Birthday, Tannaaa ❤️!\n\nWho would’ve thought that meeting in school would turn into such a beautiful friendship and eventually make us best friends? You’ve inspired me in so many ways and, honestly, irritated me just as much 😂.\n\nBut who wants a boring life anyway? I’m glad to have an irritating, crazy bestie like you who always inspires me to push myself and gives me positive thoughts whenever I need them. ❤️",
+    quote: "Happiest Birthday, Tannaaa ❤️!\n\nWho would’ve thought that meeting in school would turn into such a beautiful friendship and eventually make us best friends? You’ve inspired me in so many ways and, honestly, irritated me just as much 😂.\n\nBut who wants a boring life anyway? I’m glad to have a crazy, irritating bestie like you who always inspires me to push myself and gives me positive thoughts whenever I need them. ❤️\n\nAnd one more thing I have to say—you are such a Gundi and a Chota Don 😀😀. Somehow you manage to be sweet, annoying, caring, and scary all at the same time! 😂❤️",
     answer: "Chintan",
     aliases: ["chintan", "chintu", "chintoo", "chintan bhai", "chintann"],
     relationship: "Your Crazy Irritating Bestie 👑❤️",
-    tagline: "“School mates to forever best friends!” 💑",
+    tagline: "“Gundi & Chota Don — sweet, annoying & scary! 😂❤️”",
     avatarIcon: "👑",
     themeColor: "#ffadad",
   },
