@@ -132,6 +132,16 @@ const QUOTES = [
     avatarIcon: "🛺",
     themeColor: "#c7d2fe",
   },
+  {
+    id: 14,
+    quote: "Udita was the kind of person who made an effort to talk to everyone throughout the trip, making sure everyone felt included, comfortable, and never left out. Her warm and friendly nature made the whole experience even more enjoyable. ❤️😊",
+    answer: "Daksh",
+    aliases: ["daksh", "dakshbhai", "daksh bhai", "dakshu", "dakshh"],
+    relationship: "Trip Buddy & Heartwarming Friend 🎒✨",
+    tagline: "“Always making sure everyone feels included & loved!” ❤️😊",
+    avatarIcon: "🎒",
+    themeColor: "#bbf7d0",
+  },
 ]
 
 const DARES_POOL = [
