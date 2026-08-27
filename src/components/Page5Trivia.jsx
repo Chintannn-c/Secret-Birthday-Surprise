@@ -44,7 +44,7 @@ const QUOTES = [
   },
   {
     id: 5,
-    quote: "Udita makes whole group in unity and always a happy person, good nature and always a smile on face Future CA 🫡😎",
+    quote: "Keeping the whole group together, always wearing that smile, having such a good nature, and of course, being our future CA 🫡😎. Keep shining, keep smiling, and keep being the amazing person you are! ❤️✨",
     answer: "Meet",
     aliases: ["meet", "meetbhai", "meet bhai", "mit"],
     relationship: "Group Unifier & Cheerleader 🫡✨",
