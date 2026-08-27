@@ -1,0 +1,370 @@
+.passcode-vault-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.vault-header {
+  text-align: center;
+}
+
+.vault-header .section-title {
+  font-size: 1.7rem;
+  margin: 0;
+  color: var(--brown-dark);
+}
+
+.vault-header .section-subtitle {
+  font-size: 0.85rem;
+  margin-top: 2px;
+  color: var(--text-medium);
+}
+
+.vault-content {
+  display: flex;
+  gap: 55px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Polaroid Photo Frame (Matching User Reference Screenshot) */
+.polaroid-vault-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.polaroid-vault-card {
+  position: relative;
+  width: 185px;
+  background: #ffffff;
+  padding: 10px 10px 12px 10px;
+  border-radius: 8px;
+  box-shadow: 0 12px 34px rgba(90, 60, 50, 0.15);
+  border: 1px solid #f0e6da;
+  transform: rotate(-2.5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid-vault-card:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 0 16px 42px rgba(90, 60, 50, 0.2);
+}
+
+/* Top-Left Corner Flower Overlay */
+.corner-flower-accent {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 46px;
+  height: 46px;
+  z-index: 15;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
+}
+
+.flower-accent-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.polaroid-vault-photo-box {
+  width: 100%;
+  height: 290px;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fbf7f0;
+}
+
+.polaroid-vault-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.polaroid-vault-card:hover .polaroid-vault-photo {
+  transform: scale(1.04);
+}
+
+/* Bottom Margin */
+.polaroid-vault-bottom {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+  padding: 0 2px;
+  min-height: 32px;
+}
+
+.polaroid-vault-doodles {
+  display: flex;
+  gap: 3px;
+  color: #d2bba8;
+  font-size: 0.85rem;
+}
+
+.doodle-star.small {
+  font-size: 0.65rem;
+  margin-top: 3px;
+}
+
+.polaroid-vault-script {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: #5c4333;
+  margin-right: 14px;
+  transform: rotate(-2deg);
+}
+
+/* Bottom Right Corner Ribbon Accent */
+.corner-ribbon-accent {
+  position: absolute;
+  bottom: -14px;
+  right: -10px;
+  width: 44px;
+  height: 35px;
+  z-index: 15;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.14));
+}
+
+.ribbon-accent-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.polaroid-caption {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin-top: 8px;
+}
+
+/* Passcode Vault Section (Symmetrically Aligned Layout) */
+.passcode-card {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  position: relative;
+  border: none;
+  margin-top: -16px;
+  align-self: flex-start;
+}
+
+.passcode-card-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  width: 100%;
+}
+
+/* 4 Square rounded passcode inputs (Total width: 4 * 44px + 3 * 8px = 200px) */
+.passcode-inputs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.digit-box {
+  width: 44px;
+  height: 48px;
+  border-radius: 10px;
+  border: 2px solid #dfcfbc;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: bold;
+  color: var(--pink-deep);
+  background: #ffffff;
+  transition: all 0.25s ease;
+  outline: none;
+  box-shadow: 0 3px 10px rgba(90, 60, 50, 0.08);
+}
+
+.digit-box:focus {
+  border-color: var(--pink-deep);
+  box-shadow: 0 0 0 3px rgba(212, 136, 138, 0.3);
+}
+
+.digit-box.filled {
+  border-color: var(--pink-deep);
+  background: #fff0f3;
+  color: var(--pink-deep);
+}
+
+.error-message {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #e25b5b;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+}
+
+.success-message {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: #28c840;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+/* 3-Column Keypad (Total width: 3 * 50px + 2 * 25px = 200px) */
+.numeric-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 25px;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+.keypad-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  background: #ffffff;
+  color: #4a382a;
+  border: 1.5px solid #dfcfbc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(130, 90, 70, 0.08);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.keypad-btn:hover {
+  background: var(--pink-soft);
+  color: #ffffff;
+  border-color: var(--pink-deep);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(244, 160, 184, 0.35);
+}
+
+.keypad-btn:active {
+  transform: scale(0.94);
+}
+
+.keypad-btn.special {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+  background: #ffffff;
+  border-color: #dfcfbc;
+}
+
+
+
+/* Shake animation */
+.shake-anim {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(4px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-6px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(6px, 0, 0);
+  }
+}
+
+/* Hint Modal */
+.hint-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.hint-modal {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 320px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hint-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.hint-modal h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--brown-dark);
+  margin-bottom: 8px;
+}
+
+.hint-modal p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  margin-bottom: 18px;
+}
+
+.hint-close-btn {
+  background: var(--pink-deep);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}

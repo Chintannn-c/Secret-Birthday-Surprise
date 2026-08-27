@@ -1,0 +1,232 @@
+.page3-letter-container {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.6s ease-out;
+  box-sizing: border-box;
+}
+
+/* Quilled Floral Greeting Card */
+.quilled-card-wrapper {
+  position: relative;
+  width: 320px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.quilled-card-wrapper:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Pink Envelope Wings background */
+.pink-envelope-wings {
+  position: absolute;
+  width: 245px;
+  height: 245px;
+  background: #f0a6b8;
+  transform: rotate(45deg);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(224, 134, 156, 0.35);
+  z-index: 1;
+}
+
+/* Square Card */
+.quilled-square-card {
+  position: relative;
+  z-index: 2;
+  width: 255px;
+  height: 255px;
+  background: #fffefb;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(90, 60, 50, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 16px 12px;
+  border: 1px solid #f0e6da;
+}
+
+.quilled-bouquet-area {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quilled-bouquet-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+
+.quilled-card-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--brown-dark);
+  margin-top: -10px;
+}
+
+.quilled-card-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--pink-deep);
+  margin-top: -4px;
+}
+
+/* Red Wax Seal Badge on bottom-right of card */
+.card-wax-seal {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d44d4d 0%, #a82e2e 70%, #7a1c1c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(168, 46, 46, 0.4);
+}
+
+.wax-hint {
+  font-family: var(--font-handwritten);
+  font-size: 1rem;
+  color: var(--text-medium);
+  margin-top: 15px;
+}
+
+.wax-stamp {
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+/* Unfolded Letter Sheet */
+.unfolded-letter-wrapper {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation: unfoldIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.letter-paper-sheet {
+  background: #fffefb;
+  width: 100%;
+  max-height: calc(100% - 65px);
+  padding: 22px 32px 25px 32px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(90, 60, 50, 0.08);
+  position: relative;
+  border: 1px solid #f0e6da;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.paper-taped-corner {
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  width: 70px;
+  height: 22px;
+  background: rgba(244, 194, 194, 0.45);
+  transform: rotate(4deg);
+}
+
+.letter-salutation {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.55rem;
+  color: var(--brown-dark);
+  margin-bottom: 10px;
+}
+
+.letter-paragraph {
+  font-family: var(--font-handwritten);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.letter-signoff-block {
+  margin-top: 14px;
+}
+
+.signoff-line {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--text-medium);
+}
+
+.signature-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--pink-deep);
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.letter-action-footer {
+  margin-top: auto;
+  margin-bottom: 8px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.continue-btn {
+  background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(212, 136, 138, 0.35);
+  transition: all 0.3s ease;
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(212, 136, 138, 0.5);
+}

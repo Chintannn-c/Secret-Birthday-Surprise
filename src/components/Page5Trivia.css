@@ -1,0 +1,605 @@
+.page5-trivia-container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.6s ease-out;
+  box-sizing: border-box;
+}
+
+.page5-trivia-container .section-title {
+  font-size: 1.85rem;
+  margin-bottom: 4px;
+  color: var(--brown-dark);
+}
+
+.page5-trivia-container .section-subtitle {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  color: var(--text-medium);
+}
+
+/* Scoreboard */
+.scoreboard-bar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.score-badge, .streak-badge {
+  background: #ffffff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  box-shadow: 0 4px 12px rgba(90, 60, 50, 0.06);
+  border: 1px solid var(--pink-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.score-badge strong, .streak-badge strong {
+  color: var(--pink-deep);
+  font-size: 1.05rem;
+}
+
+/* Main Guessing Card */
+.guess-main-card {
+  background: #ffffff;
+  padding: 22px 26px;
+  border-radius: 22px;
+  box-shadow: 0 10px 35px rgba(90, 60, 50, 0.08);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--cream-dark);
+  box-sizing: border-box;
+  animation: popIn 0.4s ease-out;
+}
+
+/* Top Progress & Tries Bar */
+.guess-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(212, 136, 138, 0.3);
+}
+
+.quote-progress-tag {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--pink-deep);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.tries-indicator-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff4f6;
+  padding: 4px 12px;
+  border-radius: 16px;
+  border: 1px solid #ffd4dc;
+}
+
+.tries-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-medium);
+}
+
+.tries-hearts {
+  display: flex;
+  gap: 4px;
+}
+
+.try-heart {
+  font-size: 1rem;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
+}
+
+.try-heart.active {
+  animation: heartBeat 2s infinite ease-in-out;
+}
+
+.try-heart.lost {
+  opacity: 0.35;
+  filter: grayscale(1);
+  transform: scale(0.85);
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Quote Letter Sheet */
+.quote-letter-sheet {
+  position: relative;
+  background: linear-gradient(180deg, #fffdfa 0%, #faf5ec 100%);
+  border: 1px solid #ebd9c5;
+  border-radius: 16px;
+  padding: 24px 34px 24px 38px;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(139, 111, 94, 0.06);
+  box-sizing: border-box;
+}
+
+.letter-quote-mark {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--pink-soft);
+  position: absolute;
+  line-height: 1;
+  user-select: none;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.letter-quote-mark.open {
+  top: 6px;
+  left: 12px;
+}
+
+.letter-quote-mark.close {
+  bottom: 2px;
+  right: 14px;
+}
+
+.letter-quote-content {
+  position: relative;
+  z-index: 1;
+  padding-left: 16px;
+}
+
+.quote-paragraph {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.quote-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Guess Form & Input */
+.guess-form-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.guess-input-label {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+
+.guess-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 520px;
+  background: var(--cream);
+  padding: 6px 8px 6px 14px;
+  border-radius: 30px;
+  border: 2px solid var(--cream-dark);
+  transition: all 0.25s ease;
+}
+
+.guess-input-row:focus-within {
+  background: #ffffff;
+  border-color: var(--pink-deep);
+  box-shadow: 0 4px 18px rgba(212, 136, 138, 0.25);
+}
+
+.input-prefix-icon {
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.guess-text-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
+  font-weight: 500;
+}
+
+.guess-text-input::placeholder {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  font-family: var(--font-sans);
+}
+
+.guess-submit-btn {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%);
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 24px;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(212, 136, 138, 0.35);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+}
+
+.guess-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(212, 136, 138, 0.45);
+}
+
+.guess-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Feedback Text */
+.guess-feedback-text {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  margin-top: 4px;
+  text-align: center;
+  min-height: 28px;
+}
+
+.guess-feedback-text.positive {
+  color: #28c840;
+  font-weight: 700;
+}
+
+.guess-feedback-text.negative {
+  color: #e25b5b;
+}
+
+/* Shake Animation */
+.shake-anim {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(3px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+  40%, 60% { transform: translate3d(5px, 0, 0); }
+}
+
+/* Reveal Card */
+.guess-reveal-card {
+  width: 100%;
+  background: linear-gradient(135deg, #fff5f7 0%, #fdf0f4 100%);
+  border: 2px solid var(--pink-soft);
+  border-radius: 18px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal-avatar-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 14px rgba(90, 60, 50, 0.12);
+  border: 3px solid #ffffff;
+  margin-bottom: 2px;
+}
+
+.reveal-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.reveal-author-name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--brown-dark);
+  margin: 0;
+}
+
+.reveal-relationship {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--pink-deep);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.reveal-tagline {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  margin-top: 2px;
+}
+
+.next-quote-btn {
+  margin-top: 10px;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%);
+  color: #ffffff;
+  padding: 10px 26px;
+  border-radius: 24px;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(212, 136, 138, 0.35);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.next-quote-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(212, 136, 138, 0.45);
+}
+
+/* Dare Modal Overlay */
+.dare-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(40, 25, 25, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.dare-modal-box {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px 26px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  border: 3px solid #ffccd5;
+  animation: popIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.dare-icon-bubble {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffe4e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 6px 18px rgba(226, 91, 91, 0.2);
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.dare-badge-alert {
+  background: #ff4757;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.dare-modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  color: #2f1e1e;
+  margin-bottom: 8px;
+}
+
+.dare-modal-instruction {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-medium);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+
+.dare-task-card {
+  background: #fff8f0;
+  border: 2px dashed #f3c299;
+  border-radius: 16px;
+  padding: 16px 20px;
+  width: 100%;
+  margin-bottom: 22px;
+  box-sizing: border-box;
+}
+
+.dare-task-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: #a45a2a;
+  margin-bottom: 6px;
+}
+
+.dare-task-desc {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: #4a2e1f;
+  line-height: 1.4;
+}
+
+.dare-complete-btn {
+  background: linear-gradient(135deg, #ff6b81 0%, #ee5253 100%);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(238, 82, 83, 0.35);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dare-complete-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 25px rgba(238, 82, 83, 0.45);
+}
+
+/* Completed Card */
+.trivia-completed-card {
+  background: #ffffff;
+  padding: 30px 28px;
+  border-radius: 22px;
+  box-shadow: 0 10px 35px rgba(90, 60, 50, 0.08);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--cream-dark);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.trophy-bounce {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  animation: bounce 1.5s infinite;
+}
+
+.trivia-completed-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--brown-dark);
+  margin-bottom: 8px;
+}
+
+.final-score-text {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.final-score-text strong {
+  color: var(--pink-deep);
+}
+
+.completion-sub {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  color: var(--text-medium);
+  margin-bottom: 22px;
+  max-width: 480px;
+}
+
+.continue-btn {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 26px;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(212, 136, 138, 0.35);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(212, 136, 138, 0.45);
+}
+
+@media (max-width: 600px) {
+  .guess-main-card {
+    padding: 18px 14px;
+  }
+
+  .quote-letter-sheet {
+    padding: 18px 16px 18px 26px;
+  }
+
+  .letter-quote-content {
+    padding-left: 10px;
+  }
+
+  .quote-paragraph {
+    font-size: 0.98rem;
+  }
+
+  .guess-input-row {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 8px;
+  }
+
+  .guess-text-input {
+    width: 100%;
+    background: var(--cream);
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 2px solid var(--cream-dark);
+    text-align: center;
+  }
+
+  .guess-submit-btn {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .dare-modal-box {
+    padding: 22px 16px;
+  }
+}

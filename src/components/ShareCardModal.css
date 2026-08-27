@@ -1,0 +1,370 @@
+/* Share / QR Scan Card Modal Styles */
+.share-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(45, 30, 25, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.share-modal-content {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px 24px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--cream-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
+}
+
+.share-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+  color: var(--text-dark);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.share-modal-close:hover {
+  background: var(--pink-soft);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.share-modal-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.share-top-pill {
+  display: inline-block;
+  background: #fff0f3;
+  color: var(--pink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 12px;
+  border: 1px solid #ffd4dc;
+  margin-bottom: 8px;
+}
+
+.share-modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--brown-dark);
+  margin-bottom: 6px;
+}
+
+.share-modal-sub {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-medium);
+  line-height: 1.4;
+  max-width: 420px;
+}
+
+/* Physical Printable Gift Card */
+.printable-gift-card {
+  position: relative;
+  background: linear-gradient(135deg, #fffcf7 0%, #fdf6ec 100%);
+  border: 3px dashed #d5b895;
+  border-radius: 20px;
+  padding: 26px 22px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(92, 64, 51, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+}
+
+.card-corner {
+  position: absolute;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.card-corner.top-left {
+  top: 10px;
+  left: 12px;
+}
+
+.card-corner.top-right {
+  top: 10px;
+  right: 12px;
+}
+
+.card-corner.bottom-left {
+  bottom: 10px;
+  left: 12px;
+}
+
+.card-corner.bottom-right {
+  bottom: 10px;
+  right: 12px;
+}
+
+.gift-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.gift-card-seal {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #e11d48, #be123c);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 10px rgba(190, 18, 60, 0.35);
+  margin-bottom: 6px;
+}
+
+.gift-card-title {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--text-medium);
+  margin-bottom: 2px;
+}
+
+.gift-card-recipient {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+/* QR Box */
+.gift-card-qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.qr-frame-outer {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(92, 64, 51, 0.12);
+  border: 1px solid #ebd9c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.gift-card-qr-img {
+  width: 170px;
+  height: 170px;
+  display: block;
+  border-radius: 8px;
+}
+
+.qr-loading {
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.scan-instruction-pill {
+  background: #ffffff;
+  border: 1px solid #ebd9c5;
+  color: var(--brown-dark);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Card Footer */
+.gift-card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.gift-card-url-text {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--pink-deep);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.gift-card-quote {
+  font-family: var(--font-handwritten);
+  font-size: 1.15rem;
+  color: var(--text-medium);
+}
+
+/* URL Customizer Section */
+.url-customizer-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.customize-url-toggle-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-light);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.customize-url-toggle-btn:hover {
+  color: var(--pink-deep);
+}
+
+.custom-url-input-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.custom-url-input {
+  flex: 1;
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+  border-radius: 16px;
+  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.custom-url-input:focus {
+  border-color: var(--pink-deep);
+  background: #ffffff;
+}
+
+.done-url-btn {
+  background: var(--pink-deep);
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Actions Row */
+.share-actions-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.share-action-btn {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 24px;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.copy-btn {
+  background: #ffffff;
+  border: 2px solid var(--pink-soft);
+  color: var(--pink-deep);
+}
+
+.copy-btn:hover {
+  background: #fff5f7;
+  border-color: var(--pink-deep);
+  transform: translateY(-2px);
+}
+
+.print-btn {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(212, 136, 138, 0.35);
+}
+
+.print-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(212, 136, 138, 0.45);
+}
+
+/* Print Specific Rules */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .printable-gift-card, .printable-gift-card * {
+    visibility: visible;
+  }
+
+  .printable-gift-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85mm;
+    max-width: 85mm;
+    padding: 12mm 10mm;
+    box-shadow: none;
+    border: 2px solid #5c4033;
+  }
+}

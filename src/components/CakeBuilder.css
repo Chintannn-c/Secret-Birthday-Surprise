@@ -1,0 +1,574 @@
+.cake-section {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 80px;
+  padding: 0 20px 60px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.cake-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cake-builder {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 20px;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 24px rgba(90, 60, 50, 0.08);
+}
+
+/* Cake Preview */
+.cake-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 280px;
+  position: relative;
+}
+
+/* Cake Stand */
+.cake-stand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.cake-stand-plate {
+  width: 180px;
+  height: 12px;
+  background: linear-gradient(180deg, #e8ddd2, #d8cdc0);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.cake-stand-stem {
+  width: 14px;
+  height: 30px;
+  background: linear-gradient(90deg, #d8cdc0, #c8bdb0);
+  border-radius: 2px;
+}
+
+.cake-stand-base {
+  width: 80px;
+  height: 8px;
+  background: linear-gradient(180deg, #d8cdc0, #c8bdb0);
+  border-radius: 50%;
+}
+
+/* Cake layers */
+.cake-layers {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: cakeAppear 0.5s ease-out;
+}
+
+@keyframes cakeAppear {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cake-layer {
+  border-radius: 6px 6px 4px 4px;
+  position: relative;
+}
+
+.layer-bottom {
+  width: 140px;
+  height: 50px;
+}
+
+.layer-top {
+  width: 120px;
+  height: 45px;
+  margin-top: -2px;
+}
+
+.cake-layer-side {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Frosting */
+.cake-frosting {
+  position: absolute;
+  top: -4px;
+  width: 124px;
+  height: 10px;
+  border-radius: 8px;
+  animation: frostAppear 0.4s ease;
+}
+
+@keyframes frostAppear {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.frosting-drip {
+  position: absolute;
+  top: 6px;
+  width: 12px;
+  border-radius: 0 0 6px 6px;
+  animation: dripDown 0.6s ease-out forwards;
+}
+
+@keyframes dripDown {
+  from { height: 0; }
+  to { height: var(--drip-height, 18px); }
+}
+
+.drip-1 { left: 15%; --drip-height: 20px; animation-delay: 0.1s; }
+.drip-2 { left: 40%; --drip-height: 14px; animation-delay: 0.2s; }
+.drip-3 { left: 60%; --drip-height: 22px; animation-delay: 0.15s; }
+.drip-4 { left: 80%; --drip-height: 16px; animation-delay: 0.25s; }
+
+/* Toppings */
+.cake-topping {
+  position: absolute;
+  top: -30px;
+  animation: topAppear 0.4s ease;
+}
+
+@keyframes topAppear {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Cherry */
+.cherry-group {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.cherry {
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 35% 35%, #ff4444, #cc0000);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.cherry-2 {
+  left: 12px;
+  bottom: 2px;
+}
+
+.cherry-stem {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 2px;
+  height: 14px;
+  background: #2d5a1e;
+  border-radius: 1px;
+  transform: rotate(10deg);
+}
+
+/* Sprinkles */
+.sprinkles-group {
+  position: relative;
+  width: 120px;
+  height: 30px;
+  margin-left: -50px;
+}
+
+.sprinkle {
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* Candle */
+.candle-group {
+  display: flex;
+  justify-content: center;
+}
+
+.candle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candle-body {
+  width: 10px;
+  height: 35px;
+  background: linear-gradient(90deg, #f8b4c8, #f4a0b8);
+  border-radius: 2px;
+}
+
+.candle-stripe {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 3px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+}
+
+.candle-wick {
+  width: 2px;
+  height: 6px;
+  background: #333;
+  border-radius: 1px;
+  margin-top: -1px;
+}
+
+.candle-flame {
+  position: absolute;
+  top: -22px;
+  width: 12px;
+  height: 18px;
+  animation: flicker 0.3s ease-in-out infinite alternate;
+}
+
+.flame-inner {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #ffd700 0%, #ff8c00 40%, #ff4500 70%, transparent 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  filter: blur(0.5px);
+}
+
+@keyframes flicker {
+  0% { transform: scale(1) rotate(-2deg); opacity: 1; }
+  100% { transform: scale(1.1) rotate(2deg); opacity: 0.85; }
+}
+
+.candle-smoke {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 20px;
+  animation: smokeRise 1.5s ease-out forwards;
+}
+
+.candle-smoke::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(180, 180, 180, 0.4);
+  border-radius: 50%;
+  animation: smokeParticle 1.5s ease-out forwards;
+}
+
+@keyframes smokeRise {
+  from { opacity: 0.6; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-30px); }
+}
+
+@keyframes smokeParticle {
+  from { transform: scale(1); }
+  to { transform: scale(3) translateY(-20px); }
+}
+
+/* Cat Mascot */
+.cake-mascot {
+  position: absolute;
+  bottom: 10px;
+  right: -10px;
+}
+
+.mascot-body {
+  width: 45px;
+  height: 40px;
+  background: #e8ddd2;
+  border-radius: 40% 40% 50% 50%;
+  position: relative;
+}
+
+.mascot-ear {
+  position: absolute;
+  top: -10px;
+  width: 14px;
+  height: 16px;
+  background: #e8ddd2;
+  border-radius: 50% 50% 0 0;
+}
+
+.mascot-ear::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 10px;
+  background: var(--pink-soft);
+  border-radius: 50% 50% 0 0;
+}
+
+.left-ear { left: 4px; transform: rotate(-10deg); }
+.right-ear { right: 4px; transform: rotate(10deg); }
+
+.mascot-face {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mascot-eye {
+  width: 5px;
+  height: 5px;
+  background: #333;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.left-eye { left: -8px; }
+.right-eye { right: -8px; }
+
+.mascot-nose {
+  width: 4px;
+  height: 3px;
+  background: var(--pink);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mascot-mouth {
+  width: 10px;
+  height: 4px;
+  border-bottom: 1.5px solid #999;
+  border-radius: 0 0 50% 50%;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mascot-blush {
+  width: 8px;
+  height: 5px;
+  background: rgba(244, 160, 184, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+}
+
+.left-blush { left: -14px; }
+.right-blush { right: -14px; }
+
+/* Steps panel */
+.cake-steps {
+  flex: 1;
+  min-width: 240px;
+}
+
+.step-panel {
+  animation: stepIn 0.4s ease-out;
+}
+
+@keyframes stepIn {
+  from { opacity: 0; transform: translateX(15px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.step-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--brown-dark);
+  margin-bottom: 16px;
+}
+
+.step-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cake-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: var(--cream);
+  border-radius: 10px;
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cake-option:hover {
+  border-color: var(--pink-soft);
+  transform: translateX(4px);
+  background: var(--cream-dark);
+}
+
+.cake-option.selected {
+  border-color: var(--pink);
+  background: rgba(244, 194, 194, 0.15);
+}
+
+.option-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.option-emoji {
+  font-size: 1.4rem;
+}
+
+/* Blow button */
+.step-desc {
+  font-family: var(--font-handwritten);
+  font-size: 1rem;
+  color: var(--text-medium);
+  margin-bottom: 16px;
+}
+
+.blow-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+  color: white;
+  border-radius: 50px;
+  font-family: var(--font-handwritten);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(228, 120, 120, 0.3);
+}
+
+.blow-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(228, 120, 120, 0.4);
+}
+
+.blow-emoji {
+  font-size: 1.4rem;
+}
+
+/* Celebration */
+.celebration {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.celebration-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--pink-deep);
+  margin-bottom: 12px;
+  animation: celebrateScale 0.6s ease-out;
+}
+
+@keyframes celebrateScale {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.celebration-text {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--brown-dark);
+  line-height: 1.6;
+}
+
+.celebration-sub {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+}
+
+/* Confetti */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  animation: confettiFall linear forwards;
+}
+
+.confetti-piece.circle {
+  border-radius: 50%;
+}
+
+.confetti-piece.rect {
+  border-radius: 1px;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(var(--rotation, 720deg));
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cake-builder {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .cake-preview {
+    min-height: 220px;
+    width: 100%;
+  }
+
+  .cake-steps {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .cake-mascot {
+    right: 5px;
+    bottom: 5px;
+  }
+
+  .cake-section {
+    margin-top: 50px;
+  }
+}

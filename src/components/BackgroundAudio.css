@@ -1,0 +1,49 @@
+.bg-audio-container {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 200;
+}
+
+.bg-audio-btn {
+  background: #ffffff;
+  border: 1.5px solid var(--pink-soft);
+  color: var(--text-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(90, 60, 50, 0.1);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bg-audio-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(90, 60, 50, 0.16);
+  border-color: var(--pink-deep);
+}
+
+.bg-audio-btn.playing {
+  background: linear-gradient(135deg, var(--pink-soft), var(--pink));
+  color: #ffffff;
+  border-color: var(--pink-deep);
+  box-shadow: 0 6px 20px rgba(212, 136, 138, 0.4);
+}
+
+.audio-icon {
+  font-size: 0.95rem;
+}
+
+.bg-audio-btn.playing .audio-icon {
+  animation: musicPulse 1.2s infinite alternate;
+}
+
+@keyframes musicPulse {
+  from { transform: scale(1) rotate(-5deg); }
+  to { transform: scale(1.25) rotate(10deg); }
+}
