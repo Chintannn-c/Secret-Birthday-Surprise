@@ -122,6 +122,16 @@ const QUOTES = [
     avatarIcon: "💖",
     themeColor: "#fed7aa",
   },
+  {
+    id: 13,
+    quote: "From school auto to same tuition classes...\n\nDada se baar baar party of pani puri to frankie ki party mangna, it's been a great journey with you! 🛺😋\n\nOne thing which I can proudly say is that there are very few and rare school friends that you carry throughout your life, and I am lucky to have you through school class and then in CA and in firm. 💼✨\n\nYou are so kind and bakchod at the same time 😂❤️.\n\nAnyways, Happy Birthday! 🎂🎉",
+    answer: "Nishant",
+    aliases: ["nishant", "nishantbhai", "nishant bhai", "nishu", "nishuu", "nishantt"],
+    relationship: "School Auto to CA Firm Partner 🛺💼",
+    tagline: "“Pani puri & frankie parties to CA firm! 😋💼”",
+    avatarIcon: "🛺",
+    themeColor: "#c7d2fe",
+  },
 ]
 
 const DARES_POOL = [
