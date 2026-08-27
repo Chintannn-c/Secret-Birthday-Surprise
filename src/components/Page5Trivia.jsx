@@ -72,6 +72,16 @@ const QUOTES = [
     avatarIcon: "🧠",
     themeColor: "#e9d5ff",
   },
+  {
+    id: 8,
+    quote: "Happy Birthday, Udita! 🎉❤️\n\nTo our Bargaining Queen, who can turn ₹1,000 into ₹200 like she’s doing a CA calculation 😂.\n\nAnd there’s one thing the whole group knows—one tiny mistake by my bro and somehow everyone already knows: “Tonight, sleep is cancelled.” 😂\n\nJokes apart, you’re genuinely a wonderful friend, and I’m really glad to have you in my life. May this year bring you loads of success, happiness, money, and countless reasons to smile and celebrate. ❤️\n\nAnd please don’t forget—you’ll have to manage my accounts in the future! 😂💰\n\nOnce again, Happy Birthday, Udita! 🎂🎉❤️",
+    answer: "Rohan",
+    aliases: ["rohan", "rohanbhai", "rohan bhai", "rohu", "rohann"],
+    relationship: "Bargaining Fan & Future Client 😂💰",
+    tagline: "“Tonight, sleep is cancelled! 😂” 🛍️💸",
+    avatarIcon: "🛍️",
+    themeColor: "#fef08a",
+  },
 ]
 
 const DARES_POOL = [
