@@ -142,6 +142,16 @@ const QUOTES = [
     avatarIcon: "🎒",
     themeColor: "#bbf7d0",
   },
+  {
+    id: 15,
+    quote: "Everyone must have said so many sweet and amazing things about you, so I thought I should add something special from my side too 😂❤️\n\n“Tu husn pari, tum jaane jahan, tum sabse haseen, tum sabse jawaan… Saundarya Soap, Nirma!” 🤣🤪\n\nSo, how was that Joke of the Day? 😂\nEveryone else gave you compliments, I thought I’d add a little advertisement to the birthday celebration! 🤣❤️",
+    answer: "Prashant",
+    aliases: ["prashant", "prashantbhai", "prashant bhai", "prashu", "prash"],
+    relationship: "Chief Advertising & Comedy Officer 📺🤣",
+    tagline: "“Saundarya Soap, Nirma! 🧼✨ Joke of the Day 😂”",
+    avatarIcon: "🧼",
+    themeColor: "#fef08a",
+  },
 ]
 
 const DARES_POOL = [
